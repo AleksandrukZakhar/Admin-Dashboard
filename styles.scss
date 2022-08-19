@@ -21,8 +21,22 @@ $gray-primary: hsl(0, 0%, 50%);
     font-family: 'Open Sans', sans-serif;
 }
 
+body {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-areas: "sidebar header"
+                         "sidebar main"
+                         "sidebar main"
+                         "sidebar main";
+    overflow: hidden;
+
+}
+
 header {
     width: 70vw;
+    grid-area: header;
+    padding: 10px;
 }
 
 nav {
@@ -77,7 +91,8 @@ nav {
 
 .sidebar {
     @include flex(column, center, center);
-
+    
+    grid-area: sidebar;
     width: 20vw;
     height: 100vh;
     position: relative;
@@ -101,6 +116,7 @@ nav {
 
 main {
     background-color: $projects;
+    grid-area: main;
     width: 80vw;
     height: 80vh;
 }
@@ -108,7 +124,7 @@ main {
 .projects {
     display: grid;
     grid-template-columns: repeat(2, 100px);
-    gap: 5px 1.5rem;
+    gap: 0px 1.5rem;
     grid-auto-rows: 4rem;
     padding: .6rem 0 0 2px;
 }
