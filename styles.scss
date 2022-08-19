@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
+
+@mixin flex($direction: row, $content: flex-start, $items: stretch, $wrap: nowrap) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $content;
+    align-items: $items;
+    flex-wrap: $wrap;
+}
+
+$sidebar: hsl(201, 79%, 46%);
+$white-primary: hsl(0, 0%, 100%);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.sidebar {
+    @include flex(column, center, center);
+
+    width: 20vw;
+    height: 100vh;
+    position: relative;
+    gap: 1rem;
+    background-color: $sidebar;
+    font-size: .5rem;
+    color: $white-primary;
+
+    h1 {
+        position: absolute;
+        top: 10px;
+        left: 5px;
+        font-size: .6rem;
+    }
+}
+
+.sidebar-link-container {
+    width: 15vw;
+    text-align-last: left;
+}
